@@ -23,8 +23,11 @@ export const auth = async (req, res, next) => {
               // Токен валідний, доступ до decoded даних
             
               req.user = decoded;
-              next()  
+            
               
+            })
+            .then (() => {
+                next() 
             })
             .catch(err => {
               res.status(401).json({ message: 'Invalid access token' });
