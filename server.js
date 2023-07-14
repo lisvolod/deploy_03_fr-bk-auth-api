@@ -11,7 +11,7 @@ const app = express();
 
 
 // Налаштування CORS
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+// const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
