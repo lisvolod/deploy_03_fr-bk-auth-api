@@ -1,26 +1,32 @@
 import mongoose from "mongoose";
+// import Category from "./categoryModel.js";
 
 const productSchema = new mongoose.Schema({
-    productName: {
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        required: true
+    },
+    name: {
         type: String,
         required: true,
         trim: true
     },
-    productVolume: {
+    volume: {
         type:Number,
         required: true,
         trim: true
     },
-    productMaterial: {
+    material: {
         type: String,
         required: true,
     },
-    productPrice: {
+    price: {
         type: Number,
         trim: true,
         required: true,
     },
-    productImage: {
+    image: {
         type:String,
         required: true,
 

@@ -1,4 +1,4 @@
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 // Завантажуємо змінні середовища з файлу .env
@@ -13,7 +13,6 @@ const connectToDB = async () => {
             }
         );
         console.log('MongoDB connection succeeded...');
-
     } catch (error) {
         console.error('MongoDB database connection error:', error);
     }

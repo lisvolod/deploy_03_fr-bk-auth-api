@@ -1,12 +1,11 @@
 import User from "../models/userModel.js";
 
 export const authAdmin = async (req, res, next) => {
-    console.log(req.user.id);
     try {
-        await User.findOne({_id: req.user.id})
+        await User.findOne({_id: req.user._id})
         .then( user => {
             if (user.isAdmin === false)
-                return res.status(400).json({msg: "Доступ до адмін панелі заблоковано"})
+                return res.status(400).json({msg: "Access to the admin panel blocked"})
             next()
         })
     } catch (error) {
